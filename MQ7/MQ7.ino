@@ -1,7 +1,7 @@
 /* MQ-7 Carbon Monoxide Sensor Circuit with Arduino */
 
 const int AOUTpin=0;//the AOUT pin of the CO sensor goes into analog pin A0 of the arduino
-const int DOUTpin=8;//the DOUT pin of the CO sensor goes into digital pin D8 of the arduino
+const int DOUTpin=9;//the DOUT pin of the CO sensor goes into digital pin D8 of the arduino
 const int ledPin=13;//the anode of the LED connects to digital pin D13 of the arduino
 
 int limit;

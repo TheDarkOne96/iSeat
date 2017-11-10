@@ -13,10 +13,13 @@ void setup(){
   pinMode(ledPin, OUTPUT);
   pinMode(sensorPin, INPUT);
   Serial.begin (9600);
+  
 }
   
 void loop (){
-  val =digitalRead(sensorPin);
+
+for(int i=0;i<5;i++){
+    val =digitalRead(sensorPin);
   Serial.println (val);
   // when the sensor detects a signal above the threshold value, LED flashes
   if (val==HIGH) {
@@ -25,6 +28,8 @@ void loop (){
   else {
     digitalWrite(ledPin, LOW);
   }
+}
+delay(5000);
 }
 
 

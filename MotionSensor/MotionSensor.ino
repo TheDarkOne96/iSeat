@@ -16,7 +16,7 @@ long unsigned int pause = 5000;
 boolean lockLow = true;
 boolean takeLowTime;  
 
-int pirPin = 2;    //the digital pin connected to the PIR sensor's output
+int pirPin = 5;    //the digital pin connected to the PIR sensor's output
 int ledPin = 13;
 
 
