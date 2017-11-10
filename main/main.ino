@@ -1,13 +1,15 @@
-const int button_seat_1=1;//check if seat in car
-const int button_seat_2=2;//check child on seat
-const int motion=3;//read from motion sensor
-const int led_red=4;//red led
-const int led_yellow=5;//yellow led
-const int led_blue=6;//blue led
+const int button_seat_1=2;//check if seat in car
+const int button_seat_2=3;//check child on seat
+const int motion=5;//read from motion sensor
+const int led_red=10;//red led
+const int led_yellow=11;//yellow led
+const int led_blue=12;//blue led
 const int sms1=7;
 const int sms2=8;
-const int micro=10;
-const int OBD=11;
+const int micro=6;
+const int OBD=4;
+const int mono=9;
+const int led_green=13;//green led
 
 
 void setup() {
@@ -42,7 +44,7 @@ int checks;// when the car detect a child it will try varify if the kid is in th
 void loop() {
   button1_data=digitalRead(button_seat_1);
   if(button1_data==1){//that means the seat is in the car
-      button1_data=digitalRead(OBD);
+      button0_data=digitalRead(OBD);
       if(button0_data==0){//that means the car is off
         // read_micro=function_micro();
         // read_motion=function_motion();
@@ -66,7 +68,7 @@ void loop() {
                   //}
       //}
   }
-      else {//excute senario if 
+      else {//excute senario if car is on
         // read_gas=function_gas();
         // read_temp=function_micro();
         //if((read_temp>=x)||(read_gas>=y)){ //if values form the sensor are greater than set values child is in danger
@@ -76,3 +78,35 @@ void loop() {
   else {delay(240,00);}//it will wait 4 mintues before checking on the car state
   }
 }
+
+
+
+
+//Functions 
+
+//int get_temp(){
+// temp = analogRead(tempPin);
+// Serial.print("RAW DATA: ");
+// Serial.print (temp);
+ // Serial.println(" ");
+  //converts raw data into degrees celsius and prints it out
+  // 500mV/1024=.48828125
+  //temp = temp * 0.48828125;
+  //Serial.print("CELSIUS: ");
+  //Serial.print(temp);
+  //Serial.println("*C ");
+  //converts celsius into fahrenheit 
+  //temp_f = temp *9 / 5;
+  //temp_f = temp + 32;
+  //Serial.print("FAHRENHEIT: ");
+  //Serial.print(temp_f);
+  //Serial.println("*F");
+  //delay(sampleTime);
+  //return temp;
+  //}
+
+  
+
+
+
+// function_emargancy(){
