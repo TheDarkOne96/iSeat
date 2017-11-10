@@ -18,7 +18,7 @@ void setup(){
   
 void loop (){
 
-for(int i=0;i<5;i++){
+for(int i=0;i<10;i++){
     val =digitalRead(sensorPin);
   Serial.println (val);
   // when the sensor detects a signal above the threshold value, LED flashes
@@ -29,7 +29,6 @@ for(int i=0;i<5;i++){
     digitalWrite(ledPin, LOW);
   }
 }
-delay(5000);
 }
 
 
