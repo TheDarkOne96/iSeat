@@ -37,6 +37,7 @@ void loop()
        SendTextMessage();
        break;
      case 'd':
+     Serial.println("Call func.");
        DialVoiceCall();
        break;
      case 'h':
@@ -56,7 +57,7 @@ void SendTextMessage()
 {
   mySerial.print("AT+CMGF=1\r");    //Because we want to send the SMS in text mode
   delay(100);
-  mySerial.println("AT + CMGS = \"+86138xxxxx615\"");//send sms message, be careful need to add a country code before the cellphone number
+  mySerial.println("AT + CMGS = \"+971504758585\"");//send sms message, be careful need to add a country code before the cellphone number
   delay(100);
   mySerial.println("A test message!");//the content of the message
   delay(100);
@@ -69,7 +70,7 @@ void SendTextMessage()
 ///this function is to dial a voice call
 void DialVoiceCall()
 {
-  mySerial.println("ATD + +86138xxxxx615;");//dial the number
+  mySerial.println("ATD + +971504758585;");//dial the number
   delay(100);
   mySerial.println();
 }

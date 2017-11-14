@@ -50,7 +50,7 @@ void loop() {
   button1_data=1;
   if(button1_data==1){//that means the seat is in the car
       //button0_data=digitalRead(OBD);
-      button0_data=1;
+      button0_data=0;
          Serial.println("seat in car");
          delay(2000);
       if(button0_data==0){//that means the car is off
@@ -63,18 +63,19 @@ void loop() {
             
       
         // read_motion=function_motion();
-        //button2_data=digitalRead(button_seat_2);
-        button2_data=1;
+        button2_data=digitalRead(button_seat_2);
+        //button2_data=1;
         //if((read_motion>=x)||(read_micro==y)||(button2_data==1)){
         if((read_micro==1)||(button2_data==1)){
             checks=0;
-             button2_data=1;
+             //button2_data=1;
             for(int i=0;i<24;i++){
                  read_micro=get_micro();
                  Serial.println ("mic states: ");//
                  Serial.println (read_micro);//
-                 // button2_data=digitalRead(button_seat_2);
-                 button2_data=0;
+                 button2_data=digitalRead(button_seat_2);
+                 //button2_data=0;
+                 if(button2_data==1){Serial.println("button detected");}
                  //if((read_motion>=x)||(read_micro>=y)||(button2_data==1)){checks++;}
                  if((read_micro==1)||(button2_data==1)){checks++;}
                  delay(10000);//delay 10 seconds
@@ -199,7 +200,19 @@ Serial.println(" ");
   return temp;
   }
 
-  
+ int get_motion(){
+delay(2000);
+int var = digitalRead(pirPin);
+int count=0;
+for(int x=0; x<=20;x++){
+  if(var==HIGH){
+  count++;
+}
+}
+if(count>0){
+  Serial.println("Motion Detected"); return 1;
+} else   Serial.println("No Motion Detected"); return 0;
+ }
 
 
 
