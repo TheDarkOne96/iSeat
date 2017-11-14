@@ -31,11 +31,12 @@ void sendSMS() {
 
   // REPLACE THE X's WITH THE RECIPIENT'S MOBILE NUMBER
   // USE INTERNATIONAL FORMAT CODE FOR MOBILE NUMBERS
-  SIM900.println("AT + CMGS = \"+971553144457\""); 
+  SIM900.println("AT + CMGS = \"+971507050059\""); 
   delay(100);
   
   // REPLACE WITH YOUR OWN SMS MESSAGE CONTENT
-  SIM900.println("Message example from Arduino Uno."); 
+  SIM900.print("your child is in danger");
+  SIM900.println("temperture 40C"); 
   delay(100);
 
   // End AT command with a ^Z, ASCII code 26
