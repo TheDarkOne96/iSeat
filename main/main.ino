@@ -15,7 +15,7 @@ const int mono=9;
 const int button_stop=13;//green led
 const int AOUTpin_mono=0;
 const int AOUTpin_temp=2;
-int calibrationTime = 30;
+int calibrationTime = 10;
 
 void setup() {
   Serial.begin(9600);
@@ -99,7 +99,7 @@ void loop() {
                 Serial.print ("Monoxide value: ");//
                 Serial.print (analogRead(AOUTpin_mono));//
                 delay(3000);
-            if((get_temp()>=35)||(get_mono()==1)){ //if values form the sensor are greater than set values child is in danger
+            if((get_temp()>=1000)||(get_mono()==2)){ //if values form the sensor are greater than set values child is in danger
                 // function_emargancy();
                 read_temp=get_temp();
                 read_mono=get_mono();
